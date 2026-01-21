@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --bg-main:#0f0f12;
+    --bg-glass:rgba(255,255,255,0.08);
+    --bg-card:rgba(255,255,255,0.12);
+    --gold:#d4af37;
+    --gold-soft:#f5d76e;
+    --white:#ffffff;
+    --gray:#b5b5b5;
+    --danger:#ff3b3b;
+    --success:#1aff88;
+    --blur:18px;
+    --radius:18px;
+    --transition:0.35s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:linear-gradient(145deg,#09090b,#141418);
+    color:var(--white);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Glass containers */
+.glass{
+    background:var(--bg-glass);
+    backdrop-filter:blur(var(--blur));
+    -webkit-backdrop-filter:blur(var(--blur));
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 8px 30px rgba(0,0,0,0.5);
+    transition:var(--transition);
+}
+
+.glass:hover{
+    box-shadow:0 12px 40px rgba(212,175,55,0.25);
+}
+
+/* Headings */
+h1{
+    font-size:2.3rem;
+    text-align:center;
+    color:var(--gold);
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+h2{
+    font-size:1.6rem;
+    text-align:center;
+    color:var(--gold-soft);
+}
+
+h3{
+    color:var(--gold);
+}
+
+/* Buttons */
+.btn{
+    background:linear-gradient(45deg,#b08d23,#f5d76e);
+    border:none;
+    color:black;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    transition:var(--transition);
+    box-shadow:0 5px 15px rgba(212,175,55,0.4);
+}
+
+.btn:hover{
+    transform:translateY(-2px) scale(1.04);
+    box-shadow:0 8px 25px rgba(212,175,55,0.7);
+}
+
+/* Inputs */
+input, textarea{
+    width:100%;
+    background:rgba(0,0,0,0.4);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:12px;
+    padding:12px;
+    color:white;
+    margin-top:10px;
+    transition:var(--transition);
+}
+
+input:focus, textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+    box-shadow:0 0 12px rgba(212,175,55,0.4);
+}
+
+/* Forms */
+.form-box{
+    width:350px;
+    padding:35px;
+    margin:auto;
+    margin-top:120px;
+}
+
+/* Menu grid */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+/* Food card */
+.food-card{
+    padding:20px;
+    border-radius:var(--radius);
+    background:var(--bg-card);
+    backdrop-filter:blur(var(--blur));
+    text-align:center;
+    transition:var(--transition);
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.food-card:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 25px rgba(212,175,55,0.4);
+}
+
+/* Cart box */
+.cart-box{
+    position:fixed;
+    right:25px;
+    top:25px;
+    width:300px;
+    padding:20px;
+    border-radius:var(--radius);
+    background:rgba(10,10,10,0.85);
+    box-shadow:0 0 25px rgba(212,175,55,0.4);
+}
+
+/* Status colors */
+.status-pending{
+    color:#ffaa00;
+}
+
+.status-accepted{
+    color:var(--success);
+}
+
+.status-cancelled{
+    color:var(--danger);
+    animation:flash 0.8s infinite;
+}
+
+@keyframes flash{
+    0%{background:transparent;}
+    50%{background:rgba(255,0,0,0.25);}
+    100%{background:transparent;}
+}
+
+/* Owner cards */
+.order-card{
+    margin:20px;
+    padding:25px;
+    border-radius:var(--radius);
+    background:var(--bg-card);
+    backdrop-filter:blur(var(--blur));
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+/* Small animations */
+.fade-in{
+    animation:fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(15px);}
+    to{opacity:1; transform:translateY(0);}
+}

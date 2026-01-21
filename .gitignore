@@ -1,0 +1,12 @@
+# Ignore database config if it has credentials
+/db/config.php
+
+# Ignore logs
+*.log
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore node modules (if ever added)
+node_modules/
